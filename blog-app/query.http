@@ -1,0 +1,70 @@
+###  All Users
+
+GRAPHQL http://localhost:8080/graphql
+
+query AllUsers {
+    allUsers {
+        id
+        name
+    }
+}
+
+### Find User With Posts
+
+GRAPHQL http://localhost:8080/graphql
+
+
+query FindUserWithPosts($id: ID!) {
+    findUser(id: $id) {
+        id
+        name
+        posts {
+            title
+            body
+        }
+    }
+}
+
+{
+  "id": "1"
+}
+
+###  User Posts
+
+GRAPHQL http://localhost:8080/graphql
+
+
+query UserPosts($id: ID!) {
+    allPostsForUser (userId: $id){
+        id
+        title
+        body
+    }
+}
+
+{
+  "id": "1"
+}
+
+###  Find Post
+
+GRAPHQL http://localhost:8080/graphql
+
+
+query FindPost($id: ID!) {
+    findPost(id: $id) {
+        id
+        title
+        body
+    }
+}
+
+{
+  "id": "1"
+}
+
+
+
+
+
+
